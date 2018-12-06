@@ -1,0 +1,10 @@
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+F:\second_course\Malbkov\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
