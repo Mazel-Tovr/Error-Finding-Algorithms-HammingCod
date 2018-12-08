@@ -8,12 +8,13 @@ namespace WindowsFormsApp1
 {
     public class AddControlBit
     {
-        public string stroka { get; set; }
-
+        #region
         // Да какие ты тут коменты хотел увидеть все тоже самое что и в форме хэмминг код , но короче
+        #endregion
 
+        public string stroka { get; set; }
         // Добавляем контрольный бит четности
-        public string codding( )
+        public string coding( )
         {
             
             int[] mass = stroka.Select(ch => int.Parse(ch.ToString())).ToArray();

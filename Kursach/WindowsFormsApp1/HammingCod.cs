@@ -39,15 +39,11 @@ namespace WindowsFormsApp1
             }
         }
         #endregion
-
-        //Для кейса
-        private int Button_Presed { get; set; }
         
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
             S1 = null; S2 = null; S3 = null; S4 = null; S5 = null;
-            Button_Presed = 1;
             S = textBox1.Text;
             Codding();
             button2.Visible = true;
@@ -58,9 +54,8 @@ namespace WindowsFormsApp1
             listBox2.Items.Clear();
             if (Sk.Length == textBox2.Text.Length)
             {
-                S = textBox2.Text;
-                Button_Presed = 2;
-                Codding();
+                S = textBox2.Text;  
+                DeCodding();
             }
             else
             {
@@ -85,12 +80,8 @@ namespace WindowsFormsApp1
         private int[] sBoss5 = new int[0];
         #endregion
 
-        private void Codding()
-        {
-            switch (Button_Presed)
-            {
-                
-                case 1:
+        private void Coding()
+        {              
                   #region
                     string primer = "";
 
@@ -295,141 +286,138 @@ namespace WindowsFormsApp1
                     listBox1.Items.Add("-----------------------------");
                     listBox1.Items.Add("Полученная последовательность вычисление контрольных бит");
                     listBox1.Items.Add(Sk);
-                    #endregion
-                    break;
-                    
-
-                case 2:
-                    //Вся вторая часть алгоритма заключается в том, что необходимо заново вычислить все контрольные биты
-                    //(так же как и в первой части) и сравнить их с контрольными битами, которые мы получили
-                    #region
-                    listBox2.Items.Add("Матрица");
-                    listBox2.Items.Add("-----------------------------");
-                    if (!(S1 == null)) listBox2.Items.Add(S1);
-                    if (!(S2 == null)) listBox2.Items.Add(S2);
-                    if (!(S3 == null)) listBox2.Items.Add(S3);
-                    if (!(S4 == null)) listBox2.Items.Add(S4);
-                    if (!(S5 == null)) listBox2.Items.Add(S5);
-
-                    string[] mass = new string[NumBit];
-
-                    string was = "";
-                    was = S;
-                    int[] sBossDecode = S.Select(ch => int.Parse(ch.ToString())).ToArray(); //массив из целых чисел
-                    listBox2.Items.Add("-----------------------------");
-                    listBox2.Items.Add("--Контрольные биты --");
-                    temp = 0;
-                    for (int i = 0; i < S.Length; i++)
-                        temp += sBossDecode[i] * sBoss1[i];
-                    if (temp > 1)
-                        mass[0] = Convert.ToString(temp % 2);
-                    else
-                        mass[0] = Convert.ToString(temp);
-                    listBox2.Items.Add("r1 =  "+ mass[0]);
-
-                    if (NumBit >= 1)
-                    {
-                        temp2 = 0;
-                        for (int i = 0; i < S.Length; i++)
-                            temp2 += sBossDecode[i] * sBoss2[i];
-                        if (temp2 > 1)
-                            mass[1] = Convert.ToString(temp2 % 2);
-                        else
-                            mass[1] = Convert.ToString(temp2);
-                        listBox2.Items.Add("r2 =  "+ mass[1]);
-                    }
-
-                    if (NumBit >= 3)
-                    {
-                        temp3 = 0;
-                        for (int i = 0; i < S.Length; i++)
-                            temp3 += sBossDecode[i] * sBoss3[i];
-                        if (temp3 > 1)
-                            mass[2] = Convert.ToString(temp3 % 2);
-                        else
-                            mass[2] = Convert.ToString(temp3);
-                        listBox2.Items.Add("r3 =  "+ mass[2]);
-                    }
-
-                    if (NumBit >= 4)
-                    {
-                        temp4 = 0;
-                        for (int i = 0; i < S.Length; i++)
-                            temp4 += sBossDecode[i] * sBoss4[i];
-                        if (temp4 > 1)
-                            mass[3] = Convert.ToString(temp4 % 2);
-                        else
-                            mass[3] = Convert.ToString(temp4);
-                        listBox2.Items.Add("r4 =  "+ mass[3]);
-                    }
-
-                    if (NumBit >= 5)
-                    {
-                        temp5 = 0;
-                        for (int i = 0; i < S.Length; i++)
-                            temp5 += sBossDecode[i] * sBoss5[i];
-                        if (temp5 > 1)
-                            mass[4] = Convert.ToString(temp5 % 2);
-                        else
-                            mass[4] = Convert.ToString(temp5);
-                        listBox2.Items.Add("r5 =  " + mass[4]);
-                    }
-
-                    int plus = 0;
-
-                    if (mass[0] != "0")
-                        plus += 1;
-                    if (NumBit >= 1)
-                    {
-                        if (mass[1] != "0")
-                            plus += 2;
-                    }
-                    if (NumBit >= 3)
-                    {
-                        if (mass[2] != "0")
-                            plus += 4;
-                    }
-                    if (NumBit >= 4)
-                    {
-                        if (mass[3] != "0")
-                            plus += 8;
-                    }
-                    if (NumBit >= 5)
-                    {
-                        if (mass[4] != "0")
-                            plus += 16;
-                    }
-                   
-                    if (plus != 0)
-                    {
-                        if (S[plus - 1] == '1')
-                        {
-                            S = S.Remove(plus - 1, 1).Insert(plus - 1, "0");
-                        }
-                        else
-                        {
-                            S = S.Remove(plus - 1, 1).Insert(plus - 1, "1");
-                        }
-                        listBox2.Items.Add("---------------------------");
-                        listBox2.Items.Add(String.Format("Ошибка на {0} позиции", plus));
-                        listBox2.Items.Add("-----------------------------");
-                        listBox2.Items.Add("Было  " + was);
-                        listBox2.Items.Add("-----------------------------");
-                        listBox2.Items.Add("Стало " + S);
-                    }
-                    else
-                    {
-                        listBox2.Items.Add("-----------------------------");
-                        listBox2.Items.Add("При передаче данных либо не была совершена ошибка , либо было совершенно больше одной");
-                    }
-                    
-                    #endregion
-                    break;
-
-            }
-
+                    #endregion                
         }
 
+        private void DeCoding()
+        {
+            //Вся вторая часть алгоритма заключается в том, что необходимо заново вычислить все контрольные биты
+            //(так же как и в первой части) и сравнить их с контрольными битами, которые мы получили
+            #region
+            listBox2.Items.Add("Матрица");
+            listBox2.Items.Add("-----------------------------");
+            if (!(S1 == null)) listBox2.Items.Add(S1);
+            if (!(S2 == null)) listBox2.Items.Add(S2);
+            if (!(S3 == null)) listBox2.Items.Add(S3);
+            if (!(S4 == null)) listBox2.Items.Add(S4);
+            if (!(S5 == null)) listBox2.Items.Add(S5);
+
+            string[] mass = new string[NumBit];
+
+            string was = "";
+            was = S;
+            int[] sBossDecode = S.Select(ch => int.Parse(ch.ToString())).ToArray(); //массив из целых чисел
+            listBox2.Items.Add("-----------------------------");
+            listBox2.Items.Add("--Контрольные биты --");
+            int temp = 0;
+            for (int i = 0; i < S.Length; i++)
+                temp += sBossDecode[i] * sBoss1[i];
+            if (temp > 1)
+                mass[0] = Convert.ToString(temp % 2);
+            else
+                mass[0] = Convert.ToString(temp);
+            listBox2.Items.Add("r1 =  " + mass[0]);
+
+            if (NumBit >= 1)
+            {
+                int temp2 = 0;
+                for (int i = 0; i < S.Length; i++)
+                    temp2 += sBossDecode[i] * sBoss2[i];
+                if (temp2 > 1)
+                    mass[1] = Convert.ToString(temp2 % 2);
+                else
+                    mass[1] = Convert.ToString(temp2);
+                listBox2.Items.Add("r2 =  " + mass[1]);
+            }
+
+            if (NumBit >= 3)
+            {
+                int temp3 = 0;
+                for (int i = 0; i < S.Length; i++)
+                    temp3 += sBossDecode[i] * sBoss3[i];
+                if (temp3 > 1)
+                    mass[2] = Convert.ToString(temp3 % 2);
+                else
+                    mass[2] = Convert.ToString(temp3);
+                listBox2.Items.Add("r3 =  " + mass[2]);
+            }
+
+            if (NumBit >= 4)
+            {
+                int temp4 = 0;
+                for (int i = 0; i < S.Length; i++)
+                    temp4 += sBossDecode[i] * sBoss4[i];
+                if (temp4 > 1)
+                    mass[3] = Convert.ToString(temp4 % 2);
+                else
+                    mass[3] = Convert.ToString(temp4);
+                listBox2.Items.Add("r4 =  " + mass[3]);
+            }
+
+            if (NumBit >= 5)
+            {
+                int temp5 = 0;
+                for (int i = 0; i < S.Length; i++)
+                    temp5 += sBossDecode[i] * sBoss5[i];
+                if (temp5 > 1)
+                    mass[4] = Convert.ToString(temp5 % 2);
+                else
+                    mass[4] = Convert.ToString(temp5);
+                listBox2.Items.Add("r5 =  " + mass[4]);
+            }
+
+            int plus = 0;
+
+            if (mass[0] != "0")
+                plus += 1;
+            if (NumBit >= 1)
+            {
+                if (mass[1] != "0")
+                    plus += 2;
+            }
+            if (NumBit >= 3)
+            {
+                if (mass[2] != "0")
+                    plus += 4;
+            }
+            if (NumBit >= 4)
+            {
+                if (mass[3] != "0")
+                    plus += 8;
+            }
+            if (NumBit >= 5)
+            {
+                if (mass[4] != "0")
+                    plus += 16;
+            }
+
+            if (plus != 0)
+            {
+                if (S[plus - 1] == '1')
+                {
+                    S = S.Remove(plus - 1, 1).Insert(plus - 1, "0");
+                }
+                else
+                {
+                    S = S.Remove(plus - 1, 1).Insert(plus - 1, "1");
+                }
+                listBox2.Items.Add("---------------------------");
+                listBox2.Items.Add(String.Format("Ошибка на {0} позиции", plus));
+                listBox2.Items.Add("-----------------------------");
+                listBox2.Items.Add("Было  " + was);
+                listBox2.Items.Add("-----------------------------");
+                listBox2.Items.Add("Стало " + S);
+            }
+            else
+            {
+                listBox2.Items.Add("-----------------------------");
+                listBox2.Items.Add("При передаче данных либо не была совершена ошибка , либо было совершенно больше одной");
+            }
+
+            #endregion
+        }
+
+        //New Form Open <3
         private void добавлениеБитаЧетностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddCountBitControl F = new AddCountBitControl();
