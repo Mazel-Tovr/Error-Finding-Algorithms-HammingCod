@@ -38,13 +38,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.контрольнаяСуммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.кодХэммингаToolStripMenuItem});
+            this.кодХэммингаToolStripMenuItem,
+            this.контрольнаяСуммаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(863, 24);
@@ -140,6 +142,13 @@
             this.textBox3.Size = new System.Drawing.Size(393, 104);
             this.textBox3.TabIndex = 18;
             // 
+            // контрольнаяСуммаToolStripMenuItem
+            // 
+            this.контрольнаяСуммаToolStripMenuItem.Name = "контрольнаяСуммаToolStripMenuItem";
+            this.контрольнаяСуммаToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.контрольнаяСуммаToolStripMenuItem.Text = "Контрольная Сумма";
+            this.контрольнаяСуммаToolStripMenuItem.Click += new System.EventHandler(this.контрольнаяСуммаToolStripMenuItem_Click);
+            // 
             // AddCountBitControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,5 +185,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ToolStripMenuItem контрольнаяСуммаToolStripMenuItem;
     }
 }

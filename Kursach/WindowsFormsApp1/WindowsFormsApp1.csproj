@@ -52,16 +52,26 @@
     <Compile Include="AddCountBitControl.Designer.cs">
       <DependentUpon>AddCountBitControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlSum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlSum.Designer.cs">
+      <DependentUpon>ControlSum.cs</DependentUpon>
+    </Compile>
     <Compile Include="HammingCod.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HammingCod.Designer.cs">
       <DependentUpon>HammingCod.cs</DependentUpon>
     </Compile>
+    <Compile Include="My_Algoritm_Control_Sum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddCountBitControl.resx">
       <DependentUpon>AddCountBitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlSum.resx">
+      <DependentUpon>ControlSum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HammingCod.resx">
       <DependentUpon>HammingCod.cs</DependentUpon>

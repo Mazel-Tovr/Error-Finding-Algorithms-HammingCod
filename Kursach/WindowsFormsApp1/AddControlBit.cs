@@ -12,12 +12,12 @@ namespace WindowsFormsApp1
         // Да какие ты тут коменты хотел увидеть все тоже самое что и в форме хэмминг код , но короче
         #endregion
 
-        public string stroka { get; set; }
+        public string Stroka { get; set; }
         // Добавляем контрольный бит четности
-        public string coding( )
+        public string Add_Control_Bit_Coding( )
         {
             
-            int[] mass = stroka.Select(ch => int.Parse(ch.ToString())).ToArray();
+            int[] mass = Stroka.Select(ch => int.Parse(ch.ToString())).ToArray();
             int[] mass1 = new int[mass.Length];
             mass1 = mass;
 
@@ -31,15 +31,15 @@ namespace WindowsFormsApp1
             else
                 result = Convert.ToString(count);
 
-            stroka = stroka.Insert(stroka.Length, result);
+            Stroka = Stroka.Insert(Stroka.Length, result);
 
-            return stroka;
+            return Stroka;
             
         }
-        public string decoding()
+        public string Add_Control_Bit_Decoding()
         {
 
-            int[] mass = stroka.Select(ch => int.Parse(ch.ToString())).ToArray();
+            int[] mass = Stroka.Select(ch => int.Parse(ch.ToString())).ToArray();
             int a = Convert.ToInt16(mass[mass.Length - 1]);
             int[] mass1 = new int[mass.Length];
             mass1 = mass;

@@ -18,3 +18,15 @@ C:\Users\Рома\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\Win
 C:\Users\Рома\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
 C:\Users\Рома\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Рома\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddCountBitControl.resources
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ControlSum.resources
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HammingCod.resources
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Светлана\Desktop\Error-Finding-Algorithms-HammingCod-master\Kursach\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

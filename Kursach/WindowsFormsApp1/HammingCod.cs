@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         public HammingCod()
         {
             InitializeComponent();
-            Codding();
+            
         }
         //проверка на ввод данных
         #region
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
             listBox1.Items.Clear();
             S1 = null; S2 = null; S3 = null; S4 = null; S5 = null;
             S = textBox1.Text;
-            Codding();
+            Coding();
             button2.Visible = true;
         }
 
@@ -54,8 +54,8 @@ namespace WindowsFormsApp1
             listBox2.Items.Clear();
             if (Sk.Length == textBox2.Text.Length)
             {
-                S = textBox2.Text;  
-                DeCodding();
+                S = textBox2.Text;
+                DeCoding();
             }
             else
             {
@@ -421,6 +421,13 @@ namespace WindowsFormsApp1
         private void добавлениеБитаЧетностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddCountBitControl F = new AddCountBitControl();
+            F.Show();
+            this.Hide();
+        }
+
+        private void контрольнаяСуммаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlSum F = new ControlSum();
             F.Show();
             this.Hide();
         }

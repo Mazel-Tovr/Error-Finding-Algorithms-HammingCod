@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавлениеБитаЧетностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрольнаяСуммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавлениеБитаЧетностиToolStripMenuItem});
+            this.добавлениеБитаЧетностиToolStripMenuItem,
+            this.контрольнаяСуммаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1064, 24);
@@ -136,6 +138,13 @@
             this.добавлениеБитаЧетностиToolStripMenuItem.Size = new System.Drawing.Size(167, 20);
             this.добавлениеБитаЧетностиToolStripMenuItem.Text = "Добавление бита четности";
             this.добавлениеБитаЧетностиToolStripMenuItem.Click += new System.EventHandler(this.добавлениеБитаЧетностиToolStripMenuItem_Click);
+            // 
+            // контрольнаяСуммаToolStripMenuItem
+            // 
+            this.контрольнаяСуммаToolStripMenuItem.Name = "контрольнаяСуммаToolStripMenuItem";
+            this.контрольнаяСуммаToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.контрольнаяСуммаToolStripMenuItem.Text = "Контрольная сумма";
+            this.контрольнаяСуммаToolStripMenuItem.Click += new System.EventHandler(this.контрольнаяСуммаToolStripMenuItem_Click);
             // 
             // HammingCod
             // 
@@ -173,6 +182,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem добавлениеБитаЧетностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контрольнаяСуммаToolStripMenuItem;
     }
 }
 

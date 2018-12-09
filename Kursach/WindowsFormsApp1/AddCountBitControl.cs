@@ -54,9 +54,9 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            AddControlBit.stroka = textBox1.Text;
+            AddControlBit.Stroka = textBox1.Text;
             listBox1.Items.Add("Полученный код с контрольным битом ");
-            listBox1.Items.Add(AddControlBit.codding());
+            listBox1.Items.Add(AddControlBit.Add_Control_Bit_Coding());
             button2.Visible = true;
         }
 
@@ -65,10 +65,17 @@ namespace WindowsFormsApp1
             textBox3.Text = null;
             if (textBox1.Text.Length+1 == textBox2.Text.Length)
             {
-                AddControlBit.stroka = textBox2.Text;
-                textBox3.Text = AddControlBit.decoding();
+                AddControlBit.Stroka = textBox2.Text;
+                textBox3.Text = AddControlBit.Add_Control_Bit_Decoding();
             }
             else MessageBox.Show("Вы не можете принять инфорацию, которая меньше или больше отправленной ");
+        }
+
+        private void контрольнаяСуммаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlSum F = new ControlSum();
+            F.Show();
+            this.Close();
         }
     }
 }
