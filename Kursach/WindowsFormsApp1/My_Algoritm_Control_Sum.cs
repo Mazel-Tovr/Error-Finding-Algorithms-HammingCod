@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class My_Algoritm_Control_Sum
+    public class My_Algoritm_Control_Sum
     {
 
         public string Stroka_Bits { get; set; }

@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             return Stroka;
             
         }
+
         public string Add_Control_Bit_Decoding()
         {
 

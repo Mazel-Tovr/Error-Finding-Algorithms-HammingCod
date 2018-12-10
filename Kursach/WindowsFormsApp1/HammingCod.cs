@@ -12,6 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class HammingCod : Form
     {
+       
+
         public HammingCod()
         {
             InitializeComponent();
@@ -42,11 +44,15 @@ namespace WindowsFormsApp1
         
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            S1 = null; S2 = null; S3 = null; S4 = null; S5 = null;
-            S = textBox1.Text;
-            Coding();
-            button2.Visible = true;
+            if (textBox1.Text.Length > 0)
+            {
+                listBox1.Items.Clear();
+                S1 = null; S2 = null; S3 = null; S4 = null; S5 = null; Stroka_for_Unit_Tests1 = null;
+                S = textBox1.Text;
+                Coding();
+                button2.Visible = true;
+            }
+            else MessageBox.Show("Введите данные");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,6 +62,8 @@ namespace WindowsFormsApp1
             {
                 S = textBox2.Text;
                 DeCoding();
+                button2.Visible = false;
+                Stroka_for_Unit_Tests1 = null;
             }
             else
             {
@@ -63,10 +71,11 @@ namespace WindowsFormsApp1
             }
            
         }
+
         //Поля
         #region
-        private string S { get; set; }
-        private string Sk { get; set; }
+        public string S { get; set; }
+        public string Sk { get; set; }
         private string S1 { get; set; }
         private string S2 { get; set; }
         private string S3 { get; set; }
@@ -78,9 +87,11 @@ namespace WindowsFormsApp1
         private int[] sBoss3 = new int[0];
         private int[] sBoss4 = new int[0];
         private int[] sBoss5 = new int[0];
+
+        public string Stroka_for_Unit_Tests1 { get; set; }
         #endregion
 
-        private void Coding()
+        public virtual void Coding()
         {              
                   #region
                     string primer = "";
@@ -289,7 +300,7 @@ namespace WindowsFormsApp1
                     #endregion                
         }
 
-        private void DeCoding()
+        public void  DeCoding()
         {
             //Вся вторая часть алгоритма заключается в том, что необходимо заново вычислить все контрольные биты
             //(так же как и в первой части) и сравнить их с контрольными битами, которые мы получили
@@ -407,13 +418,15 @@ namespace WindowsFormsApp1
                 listBox2.Items.Add("Было  " + was);
                 listBox2.Items.Add("-----------------------------");
                 listBox2.Items.Add("Стало " + S);
+                Stroka_for_Unit_Tests1 = S;
             }
             else
             {
+                Stroka_for_Unit_Tests1 = "При передаче данных либо не была совершена ошибка , либо было совершенно больше одной";
                 listBox2.Items.Add("-----------------------------");
-                listBox2.Items.Add("При передаче данных либо не была совершена ошибка , либо было совершенно больше одной");
+                listBox2.Items.Add(Stroka_for_Unit_Tests1);
             }
-
+            
             #endregion
         }
 
